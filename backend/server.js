@@ -18,6 +18,8 @@ app.use(express.urlencoded({extended: false}))
 
 // This sets our routes up and establishes the api path for req / res
 app.use('/api/goals', require('./routes/goalRoutes'))
+app.use('/api/users', require('./routes/userRoutes'))
+
 
 // This overwrites the default error Handler
 app.use(errorHandler)

@@ -5,6 +5,11 @@ const mongoose = require("mongoose");
 // The rules defining the way we consume data
 const goalSchema = mongoose.Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User'
+    },
     text: {
       type: String,
       required: [true, "Please add a text value"],
