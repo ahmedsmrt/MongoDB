@@ -12,11 +12,11 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-// This overwrites the default error Handler
-app.use(errorHandler)
-
 // This sets our routes up and establishes the api path for req / res
 app.use('/api/goals', require('./routes/goalRoutes'))
+
+// This overwrites the default error Handler
+app.use(errorHandler)
 
 
 // This is an express method that listens for the port being used
