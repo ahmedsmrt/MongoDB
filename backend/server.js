@@ -1,10 +1,14 @@
 // This is the section where you use the Node function require to include external files and then return an object with all the methods and public functions available
 const express = require("express")
+const colors = require("colors")
 const dotenv = require("dotenv").config()
 
 // Created a middleware function that handles errors
 const {errorHandler} = require("./middleware/errorMiddleware")
+const connectDB = require("./config/db")
 const port = process.env.PORT || 5000
+
+connectDB()
 
 const app = express()
 
